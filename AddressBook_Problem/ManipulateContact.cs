@@ -33,7 +33,7 @@ namespace Address_Book_Problem
                     Email = Email
                 }
             );
-            Console.WriteLine($"{Name} is added___________");
+            Console.WriteLine($"{Name}'s contact is added______");
         }
 
 
@@ -51,10 +51,11 @@ namespace Address_Book_Problem
                     contact.State = Console.ReadLine();
                     Console.WriteLine("plz provide new ");
                     contact.ZipCode = Console.ReadLine();*/
-                    Console.WriteLine("plz provide new phone number");
+                    Console.WriteLine("plz enter new phone number");
                     contact.PhoneNumber = Console.ReadLine();
-                    Console.WriteLine("plz provide new email");
+                    Console.WriteLine("plz enter new email id");
                     contact.Email = Console.ReadLine();
+                    Console.WriteLine($"{Name}'s Contact is edited______");
                     break;
                 }
             }
