@@ -10,6 +10,11 @@ namespace Address_Book_Problem
     internal class ManipulateContact
     {
         List<ContactDetails> AddressBookList = new List<ContactDetails>();
+
+        //Dictionary<string , ContactOptions> AddressBookList = new Dictionary<string, ContactOptions>();
+        //Dictionary<string, ContactOptions> AddressBookList;
+
+
         public void AddingContact
             (
             string Name,
@@ -21,6 +26,7 @@ namespace Address_Book_Problem
             string Email
             )
         {
+
             AddressBookList.Add
                 (new ContactDetails()
                 {
@@ -34,6 +40,7 @@ namespace Address_Book_Problem
                 }
             );
             Console.WriteLine($"{Name}'s contact is added______");
+
         }
 
 
@@ -43,19 +50,19 @@ namespace Address_Book_Problem
             {
                 if (contact.Name.Contains(Name))
                 {
-                    /*Console.WriteLine("plz provide new ");
+                    /*Console.Write("plz provide new ");
                     contact.Address = Console.ReadLine();
-                    Console.WriteLine("plz provide new ");
+                    Console.Write("plz provide new ");
                     contact.City = Console.ReadLine();
-                    Console.WriteLine("plz provide new ");
+                    Console.Write("plz provide new ");
                     contact.State = Console.ReadLine();
-                    Console.WriteLine("plz provide new ");
+                    Console.Write("plz provide new ");
                     contact.ZipCode = Console.ReadLine();*/
-                    Console.WriteLine("plz enter new phone number");
+                    Console.Write("enter new phone number: ");
                     contact.PhoneNumber = Console.ReadLine();
-                    Console.WriteLine("plz enter new email id");
+                    Console.Write("enter new email id: ");
                     contact.Email = Console.ReadLine();
-                    Console.WriteLine($"{Name}'s Contact is edited______");
+                    Console.Write($"{Name}'s Contact is edited______");
                     break;
                 }
             }
