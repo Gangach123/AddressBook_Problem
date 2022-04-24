@@ -33,7 +33,7 @@ namespace Address_Book_Problem
                     Email = Email
                 }
             );
-            Console.WriteLine($"{Name} is added");
+            Console.WriteLine($"{Name} is added___________");
         }
     }
 }
