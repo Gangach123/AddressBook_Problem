@@ -76,5 +76,21 @@ namespace Address_Book_Problem
                 }
             }
         }
+
+
+
+
+        public void SearchingInState(String City)
+        {
+            List<ContactDetails> CityBookList = new List<ContactDetails>();
+            CityBookList = AddressBookList.FindAll(x => x.City.Contains(City) || x.State.Contains(City));
+
+            foreach (var contact in CityBookList)
+            {
+                Console.Write($"{contact.Name}, ");
+            }
+            int Count = CityBookList.Count;
+            Console.Write($"\ntotal people: {Count}\n ");
+        }
     }
 }
