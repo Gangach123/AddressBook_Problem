@@ -39,7 +39,6 @@ namespace Address_Book_Problem
                     Email = Email
                 }
             );
-            Console.WriteLine($"{Name}'s contact is added______");
 
         }
 
@@ -77,6 +76,20 @@ namespace Address_Book_Problem
                     AddressBookList.Remove(contact);
                     Console.WriteLine($"{Name}'s Contact is deleted______");
                     break;
+                }
+            }
+        }
+
+
+
+        public void SearchingInCity(string City)
+        {
+            Console.Write($"{City}: ");
+            foreach (var contact in AddressBookList)
+            {
+                if (contact.City.Contains(City))
+                {
+                    Console.Write($"{contact.Name}, ");
                 }
             }
         }
