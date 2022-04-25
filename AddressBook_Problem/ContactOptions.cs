@@ -67,7 +67,6 @@ namespace AddressBook_Problem
                       detail.Email = Email
                       );
                     Console.WriteLine($"{Name}'s Contact is added______");
-                    manipulate.SortingAddressBook();
                 }
                 else
                 {
@@ -96,6 +95,13 @@ namespace AddressBook_Problem
             Console.Write("enter city/state name you want search in: ");
             string City = Console.ReadLine();
             manipulate.SearchingInState(City);
+        }
+
+        public void SortContact()
+        {
+            Console.Write("enter sort by 1)name 2)city 3)state 4)zip: ");
+            int Option = Convert.ToInt32(Console.ReadLine());
+            manipulate.SortingAddressBook(Option);
         }
     }
 }
