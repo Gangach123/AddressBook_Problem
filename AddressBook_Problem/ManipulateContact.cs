@@ -92,5 +92,27 @@ namespace Address_Book_Problem
             int Count = CityBookList.Count;
             Console.Write($"\ntotal people: {Count}\n ");
         }
+
+
+
+
+        public void SortingAddressBook()
+        {
+            IComparer<ContactDetails> comparer = new SortingClass();
+            AddressBookList.Sort(comparer);
+        }
+    }
+
+
+
+
+
+    public class SortingClass : IComparer<ContactDetails>
+    {
+        public int Compare(ContactDetails x, ContactDetails y)
+        {
+            int NewName = x.Name.CompareTo(y.Name);
+            return NewName;
+        }
     }
 }
