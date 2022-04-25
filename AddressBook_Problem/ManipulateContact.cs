@@ -10,7 +10,6 @@ namespace Address_Book_Problem
     internal class ManipulateContact
     {
         public List<ContactDetails> AddressBookList = new List<ContactDetails>();
-
         //Dictionary<string , ContactOptions> AddressBookList = new Dictionary<string, ContactOptions>();
         //Dictionary<string, ContactOptions> AddressBookList;
 
@@ -37,9 +36,7 @@ namespace Address_Book_Problem
                     ZipCode = ZipCode,
                     PhoneNumber = PhoneNumber,
                     Email = Email
-                }
-            );
-
+                });
         }
 
 
@@ -76,20 +73,6 @@ namespace Address_Book_Problem
                     AddressBookList.Remove(contact);
                     Console.WriteLine($"{Name}'s Contact is deleted______");
                     break;
-                }
-            }
-        }
-
-
-
-        public void SearchingInCity(string City)
-        {
-            Console.Write($"{City}: ");
-            foreach (var contact in AddressBookList)
-            {
-                if (contact.City.Contains(City))
-                {
-                    Console.Write($"{contact.Name}, ");
                 }
             }
         }
