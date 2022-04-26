@@ -107,11 +107,14 @@ namespace AddressBook_Problem
 
         public void FileWrite()
         {
-            /*SimpleIO simpleIO = new SimpleIO();
-            simpleIO.SimpleWrite(manipulate.AddressBookList);*/
+            SimpleIo simpleIO = new SimpleIo();
+            simpleIO.SimpleWrite(manipulate.AddressBookList);
 
             CsvIO csvIO = new CsvIO();
             csvIO.CsvWrite(manipulate.AddressBookList);
+
+            JsonIO jsonIO = new JsonIO();
+            jsonIO.JsonWrite(manipulate.AddressBookList);
         }
 
     }

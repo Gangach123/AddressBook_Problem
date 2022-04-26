@@ -20,9 +20,9 @@ namespace AddressBookSystem
                 string BookName = Console.ReadLine();
 
                 contactOptions.AddContact(BookName);
-                /* contactOptions.EditContact();
-                 contactOptions.DeleteContact();
-                 contactOptions.SearchInState();*/
+                contactOptions.EditContact();
+                contactOptions.DeleteContact();
+                contactOptions.SearchInState();
 
                 Console.Write("add another address book? (Y/N): ");
                 String Choise = Console.ReadLine().ToUpper();
@@ -31,6 +31,7 @@ namespace AddressBookSystem
             contactOptions.SortContact();
             contactOptions.FileWrite();
         }
+
 
     }
 }
