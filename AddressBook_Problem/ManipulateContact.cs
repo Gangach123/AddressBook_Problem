@@ -12,9 +12,6 @@ namespace AddressBookSystem
     {
 
         public List<ContactDetails> AddressBookList = new List<ContactDetails>();
-        //Dictionary<string , ContactOptions> AddressBookList = new Dictionary<string, ContactOptions>();
-        //Dictionary<string, ContactOptions> AddressBookList;
-
 
         public void AddingContact
             (
@@ -94,7 +91,6 @@ namespace AddressBookSystem
 
         public void SortingAddressBook(int Option)
         {
-            // IComparer<ContactDetails> comparer = new SortingClass();
             SortingClass sortingClass = new SortingClass();
 
             switch (Option)
@@ -113,20 +109,11 @@ namespace AddressBookSystem
                     break;
             }
             AddressBookList.Sort(sortingClass);
-
-            /*foreach (var contact in AddressBookList)
-            {
-                Console.WriteLine($"name: {contact.Name}  city: {contact.City}  state: {contact.State}  zip: {contact.ZipCode}");
-            }*/
         }
 
-        /*public IEnumerator GetEnumerator()
-        {
-            return ((IEnumerable)AddressBookList).GetEnumerator();
-        }*/
     }
 
-    public class SortingClass : SortingClassBase, IComparer<ContactDetails>
+    public class SortingClass : IComparer<ContactDetails>
     {
 
         public enum SortingType
@@ -134,5 +121,28 @@ namespace AddressBookSystem
             NAME, CITY, STATE, ZIP
         }
         public SortingType Detail;
+        int IComparer<ContactDetails>.Compare(ContactDetails x, ContactDetails y)
+        {
+
+            switch (Detail)
+            {
+                case SortingType.NAME:
+                    return x.Name.CompareTo(y.Name);
+                    break;
+                case SortingType.CITY:
+                    return x.City.CompareTo(y.City);
+                    break;
+                case SortingType.STATE:
+                    return x.State.CompareTo(y.State);
+                    break;
+                case SortingType.ZIP:
+                    return x.ZipCode.CompareTo(y.ZipCode);
+                    break;
+                default:
+                    break;
+
+            }
+            return x.Name.CompareTo(y.Name);
+        }
     }
 }
