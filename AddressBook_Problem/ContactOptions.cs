@@ -1,16 +1,17 @@
-﻿using Address_Book_Problem;
+﻿using AddressBookSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AddressBook_Problem.Services;
+using Address_Book_Problem;
 
 namespace AddressBook_Problem
 {
     internal class ContactOptions
     {
         public static Dictionary<string, ManipulateContact> MultiAddressBook = new Dictionary<string, ManipulateContact>();
-
 
         ManipulateContact manipulate = new ManipulateContact();
         public void AddContact(string BookName)
@@ -102,6 +103,12 @@ namespace AddressBook_Problem
             Console.Write("enter sort by 1)name 2)city 3)state 4)zip: ");
             int Option = Convert.ToInt32(Console.ReadLine());
             manipulate.SortingAddressBook(Option);
+        }
+
+        public void FileWrite()
+        {
+            SimpleIo simpleIO = new SimpleIo();
+            simpleIO.SimpleWrite(manipulate.AddressBookList);
         }
     }
 }

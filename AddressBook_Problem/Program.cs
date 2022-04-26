@@ -1,6 +1,7 @@
-﻿using Address_Book_Problem;
-using AddressBook_Problem;
+﻿using AddressBook_Problem;
 using System;
+using AddressBook_Problem.Services;
+
 
 namespace AddressBookSystem
 {
@@ -12,21 +13,23 @@ namespace AddressBookSystem
             bool Exit = false;
             ContactOptions contactOptions = new ContactOptions();
 
+
             while (Exit == false)
             {
                 Console.Write("enter address book name: ");
                 string BookName = Console.ReadLine();
 
                 contactOptions.AddContact(BookName);
-                contactOptions.EditContact();
-                contactOptions.DeleteContact();
-                contactOptions.SearchInState();
+                /* contactOptions.EditContact();
+                 contactOptions.DeleteContact();
+                 contactOptions.SearchInState();*/
 
                 Console.Write("add another address book? (Y/N): ");
                 String Choise = Console.ReadLine().ToUpper();
                 Exit = Choise == "Y" ? false : true;
             }
             contactOptions.SortContact();
+            contactOptions.FileWrite();
         }
 
     }
